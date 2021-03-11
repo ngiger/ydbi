@@ -1,3 +1,7 @@
+## 0.5.8 - 11/03/2021
+
+* removed fixed dependency to pg (is now optional like mysql)
+
 ## 0.5.7 - 18/01/2021
 
 * Fixed and cleaned Unit Tests

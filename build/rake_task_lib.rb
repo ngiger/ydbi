@@ -60,9 +60,11 @@ def boilerplate_spec
     gem.email       = 'zdavatz@ywesee.com'
     gem.homepage    = 'https://github.com/zdavatz/ydbi'
     gem.platform    = Gem::Platform::RUBY
+    gem.licenses      = ['MIT']
     gem.extra_rdoc_files = DOC_FILES
     gem.required_ruby_version = '>= 1.8.0'
-    gem.rubyforge_project = 'ydbi'
+    gem.summary       = 'A vendor independent interface for accessing databases, similar to Perl\'s DBI'
+    gem.description   = 'Branch by ywesee com, as our patches were never accepted by upstream'
     return gem
 end
 
@@ -94,7 +96,7 @@ def dbd_gem_spec(dbd, dbd_const, code_files)
     spec.version     = dbd_version(dbd_const)
     spec.test_file   = 'test/ts_dbd.rb'
     spec.files       = gem_files(code_files)
-    spec.summary     = dbd_description(dbd_const)
+    spec.summary     = dbd_summaries(dbd_const)
     spec.description = dbd_description(dbd_const)
     spec.add_dependency 'ydbi', DBI::VERSION
 
@@ -113,6 +115,10 @@ end
 
 def dbd_description(const)
     DBI::DBD.const_get(const).const_get("DESCRIPTION")
+end
+
+def dbd_summaries(const)
+    DBI::DBD.const_get(const).const_get("DESCRIPTION") + ' ywesee fork'
 end
 
 

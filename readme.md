@@ -1,8 +1,9 @@
 # Release a new ydbi gem
 
-* rake ydbd-pg:clobber_package rake ydbd-pg:clobber_package; rake ydbi:gem ydbd-pg:gem
-* gem push ydbd-pg-0.5.4.gem
-* gem push ydbi-0.5.4.gem
+* bundle exec rake test test_dbd test_dbi
+* rake ydbd-pg:clobber_package; rake ydbd-pg:clobber_package; rake ydbi:gem ydbd-pg:gem
+* bundle exec gem push pkg/ydbd-*.gem
+* bundle exec gem push pkg/ydbi-*.gem
 
 # Description
     The DBI package is a vendor independent interface for accessing databases.
