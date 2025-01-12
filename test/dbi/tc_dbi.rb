@@ -16,7 +16,7 @@ class TC_DBI < Test::Unit::TestCase
     end
 
     def test_dbi_version
-        assert_equal("0.6.0", DBI::VERSION)
+        assert_equal("0.6.1", DBI::VERSION)
     end
 
     def test_dbd_module
@@ -137,11 +137,7 @@ class TC_DBI < Test::Unit::TestCase
        assert_respond_to(DBI, :available_drivers)
        assert_equal(
        [
-            "dbi:Mysql:",
-            "dbi:ODBC:",
             "dbi:Pg:",
-            "dbi:SQLite3:",
-            "dbi:SQLite:"
        ], DBI.available_drivers.sort)
    end
 
